@@ -6,6 +6,5 @@ class newsFeed(models.Model):
     lastname=models.CharField(max_length=10)
     image=models.ImageField(upload_to='pics',max_length=225,null=True,blank=True)
     emp_id=models.IntegerField()
-
     def _str_(self):
         return self.firstname
