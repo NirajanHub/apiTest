@@ -1,5 +1,4 @@
 """api_project URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
@@ -13,12 +12,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
-from apiapp import views
+from apiapp.views import newsList
+from memesimages.views import ImageList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('newsFeed/', views.newsList.as_view()),
+    path('newsFeed/', newsList.as_view()),
+    path('memesImages/', ImageList.as_view()),
 ]

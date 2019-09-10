@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import newsFeed
 
-
 class NewsfeedSerializers(serializers.ModelSerializer):
     class Meta:
         model = newsFeed
