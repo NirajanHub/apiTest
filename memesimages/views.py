@@ -11,18 +11,15 @@ class ImageList(APIView):
 
     def get(self, request):
         memesImages1 = memesImages.objects.all()
-        serealizer2 = ImagesSerealizer(memesImages1, many=True)
+        paginator = Paginator(memesImages1, 20)
+        self.count += 1
+        serealizer2 = ImagesSerealizer(paginator.page(self.count), many=True)
         return Response(serealizer2.data)
 
     def post(self, request):
-        postRequest = request.data.get('page')
-        serealizer = ImagesSerealizer(data=postRequest)
-        if (serealizer.is_valid(raise_exception=True)):
-            # paginator=Paginator(serealizer.data)
-            # page=request.GET.get('page')
-            # imageJson=paginator.get_page(page)
-            # if serealizer.is_valid(raise_exception=True):
-            article_saved = serealizer.save()
-
-
-        return Response({"success": "Article '{}' created sucessfully".format(article_saved.title)})
+        images = memesImages.objects.all()
+        paginator = Paginator(images, 10)
+        serealizer = ImagesSerealizer(paginator.page(request.data.get('page')), many=True)
+        # if (serealizer.is_valid(raise_exception=True)):
+        print(serealizer.data)
+        return Response(serealizer.data)
