@@ -5,3 +5,4 @@ class ImagesSerealizer(serializers.ModelSerializer):
     class Meta:
         model=memesImages
         fields=('__all__')
+
