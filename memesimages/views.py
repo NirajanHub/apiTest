@@ -19,6 +19,6 @@ class ImageList(APIView):
         images = memesImages.objects.all()
         paginator = Paginator(images,2)
         serealizer = ImagesSerealizer(paginator.page(request.data.get('page')), many=True)
-        # if (serealizer.is_valid(raise_exception=True)):
-        print(serealizer.data)
+        if (serealizer.is_valid(raise_exception=True)):
+            print(serealizer.data)
         return Response(serealizer.data)

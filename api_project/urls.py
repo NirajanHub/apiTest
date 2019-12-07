@@ -15,7 +15,6 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from rest_framework.urlpatterns import format_suffix_patterns
 from apiapp.views import newsList
 from memesimages.views import ImageList
 
@@ -23,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('newsFeed/', newsList.as_view()),
     path('memesImages/', ImageList.as_view()),
+    path('uploadImage/', ImageList.as_view()),
 ]
