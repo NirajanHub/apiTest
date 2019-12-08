@@ -1,5 +1,7 @@
-def modify_input_for_multiple_files(category, image):
-    dict = {}
-    dict['category'] = category
-    dict['image'] = image
-    return dict
+
+class Helper:
+    def modify_input_for_multiple_files(category,images):
+        dict = {}
+        dict['category'] = category
+        dict['images'] = images
+        return dict
