@@ -31,7 +31,7 @@ class Image(APIView):
                 arr.append(file_serializer.data)
             else:
                 flag = 0
-            if flag == 1:
-                return Response(arr, status=status.HTTP_201_CREATED)
-            else:
-                return Response(arr, status=status.HTTP_400_BAD_REQUEST)
+        if flag == 1:
+            return Response(arr, status=status.HTTP_201_CREATED)
+        else:
+            return Response(arr, status=status.HTTP_400_BAD_REQUEST)
