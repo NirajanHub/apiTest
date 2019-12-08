@@ -10,7 +10,7 @@ class ImageList(APIView):
 
     def get(self, request):
         memesImages1 = memesImages.objects.all()
-        paginator = Paginator(memesImages1, 20)
+        paginator = Paginator(memesImages1, 2)
         self.count += 1
         serealizer2 = ImagesSerealizer(paginator.page(self.count), many=True)
         return Response(serealizer2.data)

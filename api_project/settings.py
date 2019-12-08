@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apiapp',
     'rest_framework',
     'memesimages',
+    'uploadImage',
 
 ]
 

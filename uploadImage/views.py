@@ -4,12 +4,12 @@ from rest_framework import status
 from rest_framework.parsers import FormParser
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from api_project.uploadImage.helpers import modify_input_for_multiple_files
+from uploadImage.helpers import modify_input_for_multiple_files
 
 from .serializer import ImagesSerealizer
 
-class ImageList(APIView):
-    parser_classes = (MultiPartParser,FormParser)
+class Image(APIView):
+# parser_classes = (MultiPartParser,FormParser)
 
     # def get(self,request):
     #     all_images=Image.objects.all()
@@ -18,12 +18,13 @@ class ImageList(APIView):
     #
 
     def post(self,request,*args,**kwargs):
-        property_id=request.data['property_id']
+        category=request.data['category']
         images=dict((request.data).lists())['images']
         flag=1
         arr=[]
         for img_name in images:
-            modified_data = modify_input_for_multiple_files(property_id,img_name)
+            modified_data = modify_input_for_multiple_files(category,img_name)
+            repr((category, img_name))
             file_serializer = ImagesSerealizer(data=modified_data)
             if file_serializer.is_valid():
                 file_serializer.save()
