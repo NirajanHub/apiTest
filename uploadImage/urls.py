@@ -1,8 +1,9 @@
-from uploadImage.views import Images
+from api_project.uploadImages.views import Image
 from django.urls import path
 
-app_name='api'
-url_patterns=[
-    path('Images/',Images.as_views()),
-    path('Images/<int:pk>',Images.as_views)
+app_name = 'api'
+url_patterns = [
+
+    path('Image/', Image.as_views()),
+    path('Image/<int:pk>', Image.as_views)
 ]

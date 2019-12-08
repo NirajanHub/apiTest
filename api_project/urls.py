@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from apiapp.views import newsList
 from memesimages.views import ImageList
-from uploadImage.views import Images
+
+from uploadImage.views import Image
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('newsFeed/', newsList.as_view()),
     path('memesImages/', ImageList.as_view()),
-    path('uploadImage/', Images.as_view()),
+    path('uploadImage/', Image.as_view()),
 ]

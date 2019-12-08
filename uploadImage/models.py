@@ -8,8 +8,9 @@ class Image(models.Model):
     #     default=1,
     #     on_delete=models.CASCADE
     #  )
-    images = models.ImageField(upload_to="pics", max_length=255, null=True, blank=True)
+    images = models.ImageField(upload_to="pics")
     category = models.CharField(max_length=2)
 
     def _str_(self):
         return self.images
+
