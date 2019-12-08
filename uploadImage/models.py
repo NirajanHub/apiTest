@@ -9,4 +9,4 @@ class Image(models.Model):
         on_delete=models.CASCADE
 
     )
-    image=models.ImageField(upload_to=directory_path)
+    image=models.ImageField(upload_to="pics")
