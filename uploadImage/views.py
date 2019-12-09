@@ -1,7 +1,4 @@
-from django.http import JsonResponse
-from django.http.multipartparser import MultiPartParser
 from rest_framework import status
-from rest_framework.parsers import FormParser
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from uploadImage.helpers import modify_input_for_multiple_files
@@ -9,8 +6,8 @@ from uploadImage.helpers import modify_input_for_multiple_files
 from .serializer import ImagesSerealizer
 
 class Image(APIView):
-# parser_classes = (MultiPartParser,FormParser)
 
+    # parser_classes = (MultiPartParser,FormParser)
     # def get(self,request):
     #     all_images=Image.objects.all()
     #     serializer=ImagesSerealizer(all_images,many=True)
