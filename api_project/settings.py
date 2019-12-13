@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1']
 
-
+MEDIA_URL = 'pics/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '')
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,7 +42,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'memesimages',
     'uploadImage',
-
 ]
 
 MIDDLEWARE = [

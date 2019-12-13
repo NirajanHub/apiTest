@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Image(models.Model):
+class Images(models.Model):
     # property_id = models.ForeignKey(
     #     'properties.Address',
     #     null=False,

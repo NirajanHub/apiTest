@@ -1,11 +1,15 @@
+from django.core.paginator import Paginator
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from .models import Images
+from .serializer import ImagesSerealizer
 from uploadImage.helpers import modify_input_for_multiple_files
 
 from .serializer import ImagesSerealizer
 
 class Image(APIView):
+    count = 0
 
     # parser_classes = (MultiPartParser,FormParser)
     # def get(self,request):
@@ -13,6 +17,13 @@ class Image(APIView):
     #     serializer=ImagesSerealizer(all_images,many=True)
     #     return JsonResponse(serializer.data,safe=False)
     #
+
+    def get(self, request):
+        memesImages1 = Images.objects.all()
+        paginator =  Paginator(memesImages1, 3)
+        self.count += 1
+        serealizer2 = ImagesSerealizer(paginator.page(self.count), many=True)
+        return Response(serealizer2.data)
 
     def post(self,request,*args,**kwargs):
         category=request.data['category']
