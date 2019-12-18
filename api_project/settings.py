@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qyyed_w-450_=nzn@6x+h0vb6qu7y@l^as+-a#5n*clr(wuw$&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 MEDIA_URL = 'pics/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
