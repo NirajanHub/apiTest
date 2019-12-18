@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import memesImages
-from .serializer import ImagesSerealizer
+from uploadImage.serializer import ImagesSerealizer
 from django.core.paginator import Paginator
 
 
