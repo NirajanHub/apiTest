@@ -29,7 +29,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1']
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'pics')
 # Application definition
 
 INSTALLED_APPS = [
