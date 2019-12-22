@@ -10,7 +10,7 @@ class Images(models.Model):
     #  )
     images = models.ImageField(upload_to="pics")
     category = models.CharField(max_length=2)
-    page = models.TextField(max_length=3)
+    page = models.TextField(max_length=2)
     flag = models.BooleanField()
 
     def _str_(self):
