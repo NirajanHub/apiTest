@@ -5,6 +5,7 @@ from .models import memesImages
 from uploadImage.serializer import ImagesSerealizer
 from django.core.paginator import Paginator
 
+
 class ImageList(APIView):
     count = 0
 
@@ -17,7 +18,7 @@ class ImageList(APIView):
 
     def post(self, request):
         images = memesImages.objects.all()
-        paginator = Paginator(images,2)
+        paginator = Paginator(images, 2)
         serealizer = ImagesSerealizer(paginator.page(request.data.get('page')), many=True)
         if (serealizer.is_valid(raise_exception=True)):
             print(serealizer.data)

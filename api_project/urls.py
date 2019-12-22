@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from apiapp.views import newsList
 from memesimages.views import ImageList
+
 from uploadImage.views import Image
 
 
