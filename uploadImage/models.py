@@ -11,7 +11,7 @@ class Images(models.Model):
     images = models.ImageField(upload_to="pics")
     category = models.CharField(max_length=2)
     page = models.TextField(max_length=3)
-    flag = models.BooleanField(primary_key=True)
+    flag = models.BooleanField(default=True)
 
     def _str_(self):
         return self.images
