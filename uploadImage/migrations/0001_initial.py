@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('images', models.ImageField(upload_to='pics')),
                 ('category', models.CharField(max_length=2)),
-                ('page', models.TextField()),
+                ('page', models.TextField(max_length=3)),
                 ('flag', models.BooleanField(primary_key=True, serialize=False)),
             ],
         ),

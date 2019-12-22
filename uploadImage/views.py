@@ -20,17 +20,17 @@ class Image(APIView):
     #     return JsonResponse(serializer.data,safe=False)
     #
 
-    # def get(self, request):
-    #     memesImages1 = Images.objects.all()
-    #     paginator = Paginator(memesImages1, 3)
-    #     self.count += 1
-    #     serealizer2 = ImagesSerealizer(paginator.page(self.count), many=True)
-    #     return Response(serealizer2.data)
+    def get(self, request):
+        memesImages1 = Images.objects.all()
+        paginator = Paginator(memesImages1, 3)
+        self.count += 1
+        serealizer2 = ImagesSerealizer(paginator.page(self.count), many=True)
+        return Response(serealizer2.data)
 
     def post(self, request, *args, **kwargs):
-        page=request.data['page']
-        flag=request.data['flag']
-        if(flag):
+        page = request.data['page']
+        flag = request.data['flag']
+        if flag:
             category = request.data['category']
             images = dict((request.data).lists())['images']
             flag = 1
