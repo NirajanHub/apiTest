@@ -30,7 +30,7 @@ class Image(APIView):
     def post(self, request, *args, **kwargs):
         page = request.data['page']
         flags = request.data['flag']
-        if flags:
+        if flags == 'true':
             category = request.data['category']
             images = dict((request.data).lists())['images']
             flag = 1
