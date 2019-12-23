@@ -30,9 +30,9 @@ class Image(APIView):
     def post(self, request, *args, **kwargs):
         page = request.data['page']
         flags = request.data['flag']
-        category = request.data['category']
-        images = dict((request.data).lists())['images']
-        if flags == "true" :
+        if flags == "true":
+            category = request.data['category']
+            images = dict((request.data).lists())['images']
             flag = 1
             arr = []
             for img_name in images:
@@ -45,11 +45,11 @@ class Image(APIView):
                 else:
                     flag = 0
             if flag == 1:
-                return Response("here", status=status.HTTP_201_CREATED)
+                return Response("success", status=status.HTTP_201_CREATED)
             else:
-                return Response("here", status=status.HTTP_400_BAD_REQUEST)
+                return Response("something went wrong", status=status.HTTP_400_BAD_REQUEST)
         else:
             memesImages1 = Images.objects.all()
-            paginator = Paginator(memesImages1, page)
+            paginator = Paginator(memesImages1, 3)
             serealizer2 = ImagesSerealizer(paginator.page(page), many=True)
             return Response(serealizer2.data)
