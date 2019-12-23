@@ -36,7 +36,6 @@ class Image(APIView):
             flag = 1
             arr = []
             for img_name in images:
-
                 modified_data = modify_input_for_multiple_files(category, img_name)
                 repr((category, img_name))
                 file_serializer = ImagesSerealizer(data=modified_data)
