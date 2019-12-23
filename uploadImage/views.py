@@ -32,7 +32,7 @@ class Image(APIView):
         flags = request.data['flag']
         category = request.data['category']
         images = dict((request.data).lists())['images']
-        if flags == 'true':
+        if flags == "true" :
             flag = 1
             arr = []
             for img_name in images:
