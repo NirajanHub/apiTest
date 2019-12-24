@@ -43,9 +43,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'memesimages',
     'uploadImage',
-    'cloudinary_storage',
-    'django.contrib.staticfiles',
-    'cloudinary',
 ]
 
 MIDDLEWARE = [
