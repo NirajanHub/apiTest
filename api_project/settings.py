@@ -25,11 +25,13 @@ SECRET_KEY = 'qyyed_w-450_=nzn@6x+h0vb6qu7y@l^as+-a#5n*clr(wuw$&'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = True
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1']
 
 MEDIA_URL = 'pics/'
-MEDIA_ROOT = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# MEDIA_ROOT = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Application definition
 
 INSTALLED_APPS = [
@@ -129,5 +131,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 django_heroku.settings(locals())
