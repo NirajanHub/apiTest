@@ -25,11 +25,11 @@ SECRET_KEY = 'qyyed_w-450_=nzn@6x+h0vb6qu7y@l^as+-a#5n*clr(wuw$&'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = True
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1']
 
 MEDIA_URL = 'pics/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_ROOT = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'memesimages',
     'uploadImage',
     'cloudinary_storage',
+    'django.contrib.staticfiles',
     'cloudinary',
 ]
 
