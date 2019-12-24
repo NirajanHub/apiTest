@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'memesimages',
     'uploadImage',
     'cloudinary_storage',
-    'django.contrib.staticfiles',
     'cloudinary',
 ]
 
