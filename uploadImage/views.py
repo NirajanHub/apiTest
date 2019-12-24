@@ -30,15 +30,10 @@ class Image(APIView):
     def post(self, request, *args, **kwargs):
         page = request.data['page']
         flags = request.data['flag']
-<<<<<<< HEAD
-        category = request.data['category']
-        images = dict((request.data).lists())['images']
-        if flags == "true":
-=======
+
         if flags == "true":
             category = request.data['category']
             images = dict((request.data).lists())['images']
->>>>>>> 334205caf402552d7c007869feae83d668f68dac
             flag = 1
             arr = []
             for img_name in images:
