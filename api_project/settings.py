@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'memesimages',
     'uploadImage',
+    'cloudinary_storage',
     'cloudinary',
 ]
 
