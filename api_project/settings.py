@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'memesimages',
     'uploadImage',
-    'cloudinary_storage',
+
     'cloudinary',
 ]
 
@@ -131,7 +131,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = ''
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = ''
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, ''),
 )
