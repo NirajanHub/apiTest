@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'memesimages',
     'uploadImage',
-    'cloudinary_storage',
     'cloudinary',
 ]
 
@@ -130,6 +129,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 django_heroku.settings(locals())
