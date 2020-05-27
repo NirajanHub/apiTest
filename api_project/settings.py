@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1']
 
 MEDIA_URL = 'pics/'
-MEDIA_ROOT = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# MEDIA_ROOT = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Application definition
@@ -57,7 +57,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'api_project.urls'
@@ -129,10 +128,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = ''
-STATICFILES_STORAGE = ''
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, ''),
-)
+STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 django_heroku.settings(locals())
