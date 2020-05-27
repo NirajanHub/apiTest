@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Images
+from . models import Images
 
 class ImagesSerealizer(serializers.ModelSerializer):
     class Meta:
