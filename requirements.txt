@@ -15,9 +15,6 @@ psycopg2==2.8.4
 psycopg2-binary==2.8.4
 PyInstaller==3.6
 pynput==1.6.8
-pyobjc-core==6.2
-pyobjc-framework-Cocoa==6.2
-pyobjc-framework-Quartz==6.2
 pytz==2019.2
 requests==2.23.0
 six==1.14.0
