@@ -13,6 +13,7 @@ from .serializer import ImagesSerealizer
 class Image(APIView):
     count = 0
     totalPages = 0
+
     # parser_classes = (MultiPartParser,FormParser)
     # def get(self,request):
     #     all_images=Image.objects.all()
@@ -30,10 +31,9 @@ class Image(APIView):
     def post(self, request, *args, **kwargs):
         page = request.data['page']
         flags = request.data['flag']
-
         if flags == "true":
             category = request.data['category']
-            images = dict((request.data).lists())['images']
+            images = dict(request.data.lists())['images']
             flag = 1
             arr = []
             for img_name in images:
@@ -50,9 +50,11 @@ class Image(APIView):
             else:
                 return Response("something went wrong", status=status.HTTP_400_BAD_REQUEST)
         else:
-            memesImages1 = Images.objects.all()
+            memesImages1 = Images.objects.get_queryset().order_by('id')
             paginator = Paginator(memesImages1, 5)
-            numberOfItems=paginator.count
-            numberOfPages=paginator.num_pages+1
-            serealizer2 = ImagesSerealizer(paginator.page(numberOfPages-page), many=True)
+            numberOfItems = paginator.count
+            numberOfPages = paginator.num_pages + 1
+            if (numberOfPages - page < 1):
+                return Response("There are more updates coming soon")
+            serealizer2 = ImagesSerealizer(paginator.page(numberOfPages - page), many=True)
             return Response(serealizer2.data)
